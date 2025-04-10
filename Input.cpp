@@ -37,12 +37,12 @@ namespace Server_Library
         return in_praiseEventId;
     }
 
-    class Object* Input::Get_InputBufferSubset()
+    class Object* Input::Get_InputBuffer_Subset()
     {
         return buffer_SubSet_InputPraise;
     }
 
-    void Input::Set_Subset_InputBuffer(Object* value)
+    void Input::Set_Subset_InputBuffer(class Object* value)
     {
         buffer_SubSet_InputPraise = value;
     }

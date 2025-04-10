@@ -1,25 +1,24 @@
 #include "pch.h"
 #include "Praise0_Output.h"
-#include <cstddef>
 
 namespace Server_Library
 {
-	__int8 Praise0_Output::numberOfClientsConnected;
+	bool Praise0_Output::ping_Active;
 
 	Praise0_Output::Praise0_Output()
 	{
-		numberOfClientsConnected = 0;
+		ping_Active = false;
 	}
 
 	Praise0_Output::~Praise0_Output()
 	{
 	}
-	__int8 Praise0_Output::Get_numberOfClientsConnected()
+	bool Praise0_Output::Get_ping_Active()
 	{
-		return numberOfClientsConnected;
+		return ping_Active;
 	}
-	void Praise0_Output::Set_numberOfClientsConnected(__int8 value)
+	void Praise0_Output::Set_ping_Active(bool value)
 	{
-		numberOfClientsConnected = value;
+		ping_Active = value;
 	}
 }

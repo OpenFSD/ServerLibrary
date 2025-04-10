@@ -16,13 +16,15 @@ namespace Server_Library
     public:
         Data(__int8 number_Implemented_Cores);
         virtual ~Data();
+        
+        static void Initialise_GameInstance();
 
         __int8 BoolToInt(bool bufferSide);
         void Flip_Input_DoubleBuffer();
         void Flip_Output_DoubleBuffer();
         void Initialise_Control();
 
-        class Game* GetGameInstance();
+        class GameInstance* GetGameInstance();
         class Data_Control* Get_Data_Control();
         class Input* GetBuffer_InputFrontDouble();
         class Input* GetBuffer_InputBackDouble();
@@ -45,7 +47,7 @@ namespace Server_Library
     protected:
 
     private:
-        static class Game* ptr_GameInstance;
+        static class GameInstance* ptr_GameInstance;
     //buffers
         static class Input* ptr_EmptyBuffer_Input;
         static class Output* ptr_EmptyBuffer_Output;
@@ -59,6 +61,7 @@ namespace Server_Library
     //buffer sub sets
         static class User_I* ptr_User_I;
         static class User_O* ptr_User_O;
+        static class User_Alg* ptr_User_Alg;
 
         static bool state_InBufferToWrite;
         static bool state_OutBufferToWrite;

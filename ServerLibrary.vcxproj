@@ -172,12 +172,14 @@
     <ClInclude Include="Execute_Control.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Framework_Server.h" />
+    <ClInclude Include="GameInstance.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Input_Control.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="Output_Control.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Praise0_Algorithm.h" />
     <ClInclude Include="Praise0_Input.h" />
     <ClInclude Include="Praise0_Output.h" />
@@ -214,6 +216,7 @@
     <ClCompile Include="Execute.cpp" />
     <ClCompile Include="Execute_Control.cpp" />
     <ClCompile Include="Framework_Server.cpp" />
+    <ClCompile Include="GameInstance.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Input_Control.cpp" />
@@ -225,6 +228,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Praise0_Algorithm.cpp" />
     <ClCompile Include="Praise0_Input.cpp" />
     <ClCompile Include="Praise0_Output.cpp" />

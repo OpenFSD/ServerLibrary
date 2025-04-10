@@ -6,6 +6,7 @@ namespace Server_Library
 {
 	class Praise0_Algorithm* User_Alg::ptr_Praise0_Algorithm = NULL;
 	class Praise1_Algorithm* User_Alg::ptr_Praise1_Algorithm = NULL;
+	class Praise2_Algorithm* User_Alg::ptr_Praise2_Algorithm = NULL;
 
 	User_Alg::User_Alg()
 	{
@@ -14,19 +15,26 @@ namespace Server_Library
 
 		ptr_Praise1_Algorithm = new class Server_Library::Praise1_Algorithm();
 		while (ptr_Praise1_Algorithm == NULL) { /* wait untill class constructed */ }
+
+		ptr_Praise2_Algorithm = new class Server_Library::Praise2_Algorithm();
+		while (ptr_Praise2_Algorithm == NULL) { /* wait untill class constructed */ }
 	}
 	User_Alg::~User_Alg()
 	{
 		delete ptr_Praise0_Algorithm;
 	}
 
-	class Praise0_Algorithm* User_Alg::Get_Praise0_Algorithm()
+	Praise0_Algorithm* User_Alg::Get_Praise0_Algorithm()
 	{
 		return ptr_Praise0_Algorithm;
 	}
 
-	class Praise1_Algorithm* User_Alg::Get_Praise1_Algorithm()
+	Praise1_Algorithm* User_Alg::Get_Praise1_Algorithm()
 	{
 		return ptr_Praise1_Algorithm;
+	}
+	Praise2_Algorithm* User_Alg::Get_Praise2_Algorithm()
+	{
+		return ptr_Praise2_Algorithm;
 	}
 }       

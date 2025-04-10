@@ -17,7 +17,7 @@ namespace Server_Library
 
 	}
 
-	void Output_Control::SelectSetOutputSubset(
+	void Output_Control::SelectSet_Output_Subset(
 		__int8 ptr_praiseEventId,
 		__int8 concurrent_coreId
 	)

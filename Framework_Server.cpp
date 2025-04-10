@@ -23,6 +23,9 @@ namespace Server_Library
 		while (ptr_HostServer == NULL) { /* wait untill created */ }
 		std::cout << "Created => Server_Library::Server()" << std::endl;
 		ptr_HostServer->Get_Execute()->Initialise();
+
+		ptr_HostServer->Get_Data()->Initialise_GameInstance();
+
 		ptr_HostServer->Get_Execute()->Initialise_Threads();
 	}
 

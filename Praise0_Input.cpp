@@ -3,11 +3,11 @@
 
 namespace Server_Library
 {
-	int Praise0_Input::connection;
+	bool Praise0_Input::ping_Active;
 
 	Praise0_Input::Praise0_Input()
 	{
-		connection = 0;
+		ping_Active = false;
 	}
 
 	Praise0_Input::~Praise0_Input()
@@ -15,12 +15,13 @@ namespace Server_Library
 	
 	}
 
-	int Praise0_Input::Get_Connection()
+	bool Praise0_Input::Get_ping_Active()
 	{
-		return connection;
+		return ping_Active;
 	}
-	void Praise0_Input::Set_Connection(int value)
+
+	void Praise0_Input::Set_ping_Active(bool value)
 	{
-		connection = value;
+		ping_Active = value;
 	}
 }

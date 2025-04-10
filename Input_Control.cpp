@@ -13,7 +13,7 @@ namespace Server_Library
 	{
 
 	}
-
+/*
     void Input_Control::LoadValuesInToInputSubset(__int8 concurrent_CoreId, int* praiseEventId)
     {
         switch (*praiseEventId)
@@ -39,12 +39,12 @@ namespace Server_Library
         }
         }
     }
-
-    void Input_Control::SelectSetInputSubset(
-        int* praiseEventId
+*/
+    void Input_Control::SelectSet_Input_Subset(
+        __int8 praiseEventId
     )
     {
-        switch (*praiseEventId)
+        switch (praiseEventId)
         {
         case 0:
             Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputFrontDouble()->Set_Subset_InputBuffer(
@@ -55,6 +55,12 @@ namespace Server_Library
         case 1:
             Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputFrontDouble()->Set_Subset_InputBuffer(
                 reinterpret_cast<class Object*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_User_I()->Get_Praise1_Input())
+            );
+            break;
+
+        case 2:
+            Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputFrontDouble()->Set_Subset_InputBuffer(
+                reinterpret_cast<class Object*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_User_I()->Get_Praise2_Input())
             );
             break;
         }

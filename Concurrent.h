@@ -26,7 +26,7 @@ namespace Server_Library
             __int8 number_Implemented_Cores
         );
         void Do_Concurrent_Algorithm_For_PraiseEventId(
-            __int16 ptr_praiseEventId,
+            __int8 ptr_praiseEventId,
             class Object* ptr_Algorithm_Subset,
             class Object* ptr_Input_Subset,
             class Object* ptr_Output_Subset

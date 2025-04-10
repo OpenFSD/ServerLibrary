@@ -12,7 +12,7 @@ namespace Server_Library
         void Initialise_Control();
 
         class Input_Control* Get_Input_Control();
-        class Object* Get_InputBufferSubset();
+        class Object* Get_InputBuffer_Subset();
         __int8 GetPraiseEventId();
 
         void Set_Subset_InputBuffer(Object* value);

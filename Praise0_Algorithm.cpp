@@ -17,7 +17,6 @@ namespace Server_Library
         class Server_Library::Praise0_Output* ptr_Out_SubSet
     )
     {
-        //ToDo: game engine array of connections
-        ptr_Out_SubSet->Set_numberOfClientsConnected(ptr_Out_SubSet->Get_numberOfClientsConnected() + (__int8)1);
+         ptr_Out_SubSet->Set_ping_Active(ptr_In_SubSet->Get_ping_Active());
     }
 }

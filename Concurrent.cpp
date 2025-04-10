@@ -60,23 +60,23 @@ namespace Server_Library
 
                     Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_Data_Control()->Pop_Stack_InputPraises(concurrent_coreId);
 
-                    Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(concurrent_coreId)->Get_Concurrent_Control()->SelectSet_Algorithm_Subset_For_Given_PraiseEventId(
-                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_coreId)->GetPraiseEventId(),
-                        concurrent_coreId
-                    );
+                    //Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(concurrent_coreId)->Get_Concurrent_Control()->SelectSet_Algorithm_Subset(
+                    //    Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_coreId)->GetPraiseEventId(),
+                   //     concurrent_coreId
+                   // );
 
-                    Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_OutputRefferenceOfCore(concurrent_coreId)->Get_Control_Of_Output()->SelectSetOutputSubset(
-                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_OutputRefferenceOfCore(concurrent_coreId)->GetPraiseEventId(),
-                        concurrent_coreId
-                    );
+                  //  Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_OutputRefferenceOfCore(concurrent_coreId)->Get_Control_Of_Output()->SelectSet_Output_Subset(
+                  //      Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_OutputRefferenceOfCore(concurrent_coreId)->GetPraiseEventId(),
+                  //      concurrent_coreId
+                  //  );
 
                     Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_WriteEnable_Stack_Server_InputPraise()->Write_End(1 + concurrent_coreId);
 
-                    Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(int(concurrent_coreId))->Do_Concurrent_Algorithm_For_PraiseEventId(
-                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(int(concurrent_coreId))->GetPraiseEventId(),
-                        Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(int(concurrent_coreId))->Get_Algorithm_Subset(),
-                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(int(concurrent_coreId))->Get_InputBufferSubset(),
-                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_OutputRefferenceOfCore(int(concurrent_coreId))->Get_OutputBuffer_Subset()
+                    Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(concurrent_coreId)->Do_Concurrent_Algorithm_For_PraiseEventId(
+                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_coreId)->GetPraiseEventId(),
+                        Server_Library::Framework_Server::Get_HostServer()->Get_Algorithms()->Get_Concurren_Array(concurrent_coreId)->Get_Algorithm_Subset(),
+                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_InputRefferenceOfCore(concurrent_coreId)->Get_InputBuffer_Subset(),
+                        Server_Library::Framework_Server::Get_HostServer()->Get_Data()->Get_OutputRefferenceOfCore(concurrent_coreId)->Get_OutputBuffer_Subset()
                     );
                     Server_Library::Framework_Server::Get_HostServer()->Get_Execute()->Get_WriteEnable_Stack_Server_OutputPraise()->Write_Start(1 + concurrent_coreId);
 
@@ -101,28 +101,37 @@ namespace Server_Library
     }
 
     void  Concurrent::Do_Concurrent_Algorithm_For_PraiseEventId(
-        __int16 ptr_praiseEventId,
+        __int8 ptr_praiseEventId,
         Object* ptr_Algorithm_Subset,
         Object* ptr_Input_Subset,
         Object* ptr_Output_Subset
     )
     {
+        Server_Library::Praise0_Algorithm* ptr_Algorithm_Subset_Praise0 = NULL;
+        Server_Library::Praise0_Input* ptr_Input_Subset_Praise0 = NULL;
+        Server_Library::Praise0_Output* ptr_Output_Subset_Praise0 = NULL;
+        Server_Library::Praise1_Algorithm* ptr_Algorithm_Subset_Praise1 = NULL;
+        Server_Library::Praise1_Input* ptr_Input_Subset_Praise1 = NULL;
+        Server_Library::Praise1_Output* ptr_Output_Subset_Praise1 = NULL;
+        Server_Library::Praise2_Algorithm* ptr_Algorithm_Subset_Praise2 = NULL;
+        Server_Library::Praise2_Input* ptr_Input_Subset_Praise2 = NULL;
+        Server_Library::Praise2_Output* ptr_Output_Subset_Praise2 = NULL;
         switch (ptr_praiseEventId)
         {
-        case 0:/*
-            Server_Library::Praise0_Algorithm* ptr_Algorithm_Subset_Praise0 = reinterpret_cast <Server_Library::Praise0_Algorithm*> (ptr_Algorithm_Subset);
-            Server_Library::Praise0_Input* ptr_Input_Subset_Praise0 = reinterpret_cast <Server_Library::Praise0_Input*> (ptr_Input_Subset);
-            Server_Library::Praise0_Output* ptr_Output_Subset_Praise0 = reinterpret_cast <Server_Library::Praise0_Output*> (ptr_Output_Subset);
+        case 0:
+            ptr_Algorithm_Subset_Praise0 = reinterpret_cast <Server_Library::Praise0_Algorithm*> (ptr_Algorithm_Subset);
+            ptr_Input_Subset_Praise0 = reinterpret_cast <Server_Library::Praise0_Input*> (ptr_Input_Subset);
+            ptr_Output_Subset_Praise0 = reinterpret_cast <Server_Library::Praise0_Output*> (ptr_Output_Subset);
             ptr_Algorithm_Subset_Praise0->Do_Praise(
                 ptr_Input_Subset_Praise0,
                 ptr_Output_Subset_Praise0
-            );*/
+            );
             break;
 
         case 1: {
-              Server_Library::Praise1_Algorithm* ptr_Algorithm_Subset_Praise1 = reinterpret_cast <Server_Library::Praise1_Algorithm*> (ptr_Algorithm_Subset);
-              Server_Library::Praise1_Input* ptr_Input_Subset_Praise1 = reinterpret_cast <Server_Library::Praise1_Input*> (ptr_Input_Subset);
-              Server_Library::Praise1_Output* ptr_Output_Subset_Praise1 = reinterpret_cast <Server_Library::Praise1_Output*> (ptr_Output_Subset);
+              ptr_Algorithm_Subset_Praise1 = reinterpret_cast <Server_Library::Praise1_Algorithm*> (ptr_Algorithm_Subset);
+              ptr_Input_Subset_Praise1 = reinterpret_cast <Server_Library::Praise1_Input*> (ptr_Input_Subset);
+              ptr_Output_Subset_Praise1 = reinterpret_cast <Server_Library::Praise1_Output*> (ptr_Output_Subset);
               ptr_Algorithm_Subset_Praise1->Do_Praise(
                   ptr_Input_Subset_Praise1,
                   ptr_Output_Subset_Praise1
@@ -130,14 +139,14 @@ namespace Server_Library
         }
             break;
 
-        case 2:/*
-            Server_Library::Praise2_Algorithm* ptr_Algorithm_Subset_Praise2 = reinterpret_cast <Server_Library::Praise2_Algorithm*> (ptr_Algorithm_Subset);
-            Server_Library::Praise2_Input* ptr_Input_Subset_Praise2 = reinterpret_cast <Server_Library::Praise2_Input*> (ptr_Input_Subset);
-            Server_Library::Praise2_Output* ptr_Output_Subset_Praise2 = reinterpret_cast <Server_Library::Praise2_Output*> (ptr_Output_Subset);
+        case 2:
+            ptr_Algorithm_Subset_Praise2 = reinterpret_cast <Server_Library::Praise2_Algorithm*> (ptr_Algorithm_Subset);
+            ptr_Input_Subset_Praise2 = reinterpret_cast <Server_Library::Praise2_Input*> (ptr_Input_Subset);
+            ptr_Output_Subset_Praise2 = reinterpret_cast <Server_Library::Praise2_Output*> (ptr_Output_Subset);
             ptr_Algorithm_Subset_Praise2->Do_Praise(
                 ptr_Input_Subset_Praise2,
                 ptr_Output_Subset_Praise2
-            );*/
+            );
             break;
         }
     }

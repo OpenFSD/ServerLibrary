@@ -5,7 +5,7 @@
 
 namespace Server_Library
 {
-    class Game* Data::ptr_GameInstance = NULL;
+    class GameInstance* Data::ptr_GameInstance = NULL;
     //buffers
     class Input* Data::ptr_EmptyBuffer_Input = NULL;
     class Output* Data::ptr_EmptyBuffer_Output = NULL;
@@ -20,15 +20,13 @@ namespace Server_Library
     //buffer sub sets
     class User_I* Data::ptr_User_I = NULL;
     class User_O* Data::ptr_User_O = NULL;
+    class User_Alg* Data::ptr_User_Alg = NULL;
 
     bool Data::state_InBufferToWrite = true;
     bool Data::state_OutBufferToWrite = true;
 
     Data::Data(__int8 number_Implemented_Cores)
     {
-       // ptr_GameInstance = new class Server_Library::Game();
-       // while (ptr_GameInstance == NULL) { /* wait untill created */ }
-
         ptr_EmptyBuffer_Input = new class Server_Library::Input();
         while (ptr_EmptyBuffer_Input == NULL) { /* wait untill created */ }
         ptr_EmptyBuffer_Input->Initialise_Control();
@@ -74,6 +72,9 @@ namespace Server_Library
         ptr_User_O = new User_O();
         while (ptr_User_O == NULL) { /* wait untill created */ }
 
+        ptr_User_Alg = new User_Alg();
+        while (ptr_User_Alg == NULL) { /* wait untill created */ }
+
         delete ptr_EmptyBuffer_Input;
         delete ptr_EmptyBuffer_Output;
     }
@@ -91,6 +92,12 @@ namespace Server_Library
         }
         delete ptr_Stack_InputPraise;
         delete ptr_Stack_OutputPraise;
+    }
+
+    void Data::Initialise_GameInstance()
+    {
+        ptr_GameInstance = new class Server_Library::GameInstance();
+        while (ptr_GameInstance == NULL) { /* wait untill created */ }
     }
 
     __int8 Data::BoolToInt(bool bufferSide)
@@ -123,7 +130,7 @@ namespace Server_Library
         while (ptr_Data_Control == NULL) { /* wait untill created */ }
     }
 
-    Game* Data::GetGameInstance()
+    GameInstance* Data::GetGameInstance()
     {
         return ptr_GameInstance;
     }

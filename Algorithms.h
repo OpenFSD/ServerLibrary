@@ -20,7 +20,7 @@ namespace Server_Library
     protected:
 
     private:
-        static class Concurrent** ptr_Concurrent_Array;
+       // static class Concurrent** ptr_Concurrent_Array;
         static class Concurrent* ptr_Concurrent[4];//NUMBER OF CONCURRENT CORES
         static class Concurrent* ptr_New_Concurrent;
         static class User_Alg* ptr_User_Algorithms;

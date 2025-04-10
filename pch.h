@@ -44,5 +44,7 @@
 #include "Praise1_Output.h"
 #include "Execute.h"
 #include "Execute_Control.h"
+#include "GameInstance.h"
+#include "Player.h"
 
 #endif //PCH_H

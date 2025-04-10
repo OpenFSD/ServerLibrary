@@ -4,7 +4,7 @@
 
 namespace Server_Library
 {
-    class Concurrent** Algorithms::ptr_Concurrent_Array = NULL;
+    //class Concurrent** Algorithms::ptr_Concurrent_Array = NULL;
     class Concurrent* Algorithms::ptr_Concurrent[4] = { NULL, NULL, NULL, NULL };//NUMBER OF CONCURRENT CORES
     class Concurrent* Algorithms::ptr_New_Concurrent = NULL;
     class User_Alg* Algorithms::ptr_User_Algorithms = NULL;
@@ -21,7 +21,7 @@ namespace Server_Library
         {
             delete ptr_Concurrent[index];
         }
-        delete ptr_Concurrent_Array;
+       // delete ptr_Concurrent_Array;
         delete ptr_New_Concurrent;
         delete ptr_User_Algorithms;;
     }
@@ -48,7 +48,7 @@ namespace Server_Library
             ptr_Concurrent[index] = ptr_New_Concurrent;
         }
         delete ptr_New_Concurrent;
-        ptr_Concurrent_Array = ptr_Concurrent;
-        while (ptr_Concurrent_Array == NULL) { /* wait untill class constructed */ }
+        //ptr_Concurrent_Array = ptr_Concurrent;
+       // while (ptr_Concurrent_Array == NULL) { /* wait untill class constructed */ }
     }
 }

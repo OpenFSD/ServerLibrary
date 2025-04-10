@@ -3,43 +3,64 @@
 
 namespace Server_Library
 {
-	double Praise2_Input::_player_position_X;
-	double Praise2_Input::_player_position_Y;
-	double Praise2_Input::_player_position_Z;
+	bool Praise2_Input::_fowards;
+	bool Praise2_Input::_backwards;
+	bool Praise2_Input::_left;
+	bool Praise2_Input::_right;
+	float Praise2_Input::period;
 
 	Praise2_Input::Praise2_Input()
 	{
-
+		_fowards = false;
+		_backwards = false;
+		_left = false;
+		_right = false;
+		period = 0;
 	}
 
 	Praise2_Input::~Praise2_Input()
 	{
 
 	}
-
-	double Praise2_Input::GetPlayer_Position_X()
+	
+	bool Praise2_Input::Get_fowards()
 	{
-		return _player_position_X;
+		return _fowards;
 	}
-	double Praise2_Input::GetPlayer_Position_Y()
+	bool Praise2_Input::Get_backwards()
 	{
-		return _player_position_Y;
+		return _backwards;
 	}
-	double Praise2_Input::GetPlayer_Position_Z()
+	bool Praise2_Input::Get_left()
 	{
-		return _player_position_Z;
+		return _left;
 	}
-
-	void Praise2_Input::SetPlayer_Position_X(double value)
+	bool Praise2_Input::Get_right()
 	{
-		_player_position_X = value;
+		return _right;
 	}
-	void Praise2_Input::SetPlayer_Position_Y(double value)
+	float Praise2_Input::Get_period()
 	{
-		_player_position_Y = value;
+		return period;
 	}
-	void Praise2_Input::SetPlayer_Position_Z(double value)
+	void Praise2_Input::Set_fowards(bool value)
 	{
-		_player_position_Z = value;
+		_fowards = value;
+	}
+	void Praise2_Input::Set_backwards(bool value)
+	{
+		_backwards = value;
+	}
+	void Praise2_Input::Set_left(bool value)
+	{
+		_left = value;
+	}
+	void Praise2_Input::Set_right(bool value)
+	{
+		_right = value;
+	}
+	void Praise2_Input::Set_period(float value)
+	{
+		period = value;
 	}
 }

@@ -95,11 +95,11 @@ extern "C" __declspec(dllexport) void Set_PraiseEventId(__int8 value)
 }
 extern "C" __declspec(dllexport) void Set_Praise1_mousePos_X(__int16 value)
 {
-    reinterpret_cast <class Server_Library::Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputFrontDouble()->Get_InputBufferSubset())->Set_mouse_X(value);
+    reinterpret_cast <class Server_Library::Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputFrontDouble()->Get_InputBuffer_Subset())->Set_mouse_X(value);
 }
 extern "C" __declspec(dllexport) void Set_Praise1_mousePos_Y(__int16 value)
 {
-    reinterpret_cast <class Server_Library::Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputFrontDouble()->Get_InputBufferSubset())->Set_mouse_Y(value);
+    reinterpret_cast <class Server_Library::Praise1_Input*>(Server_Library::Framework_Server::Get_HostServer()->Get_Data()->GetBuffer_InputFrontDouble()->Get_InputBuffer_Subset())->Set_mouse_Y(value);
 }
 extern "C" __declspec(dllexport) void Create_Write_Stack_Server_OutputSend()
 {
